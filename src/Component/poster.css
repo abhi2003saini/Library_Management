@@ -1,0 +1,102 @@
+.poster {
+  position: relative;
+  height: 100vh;
+  background: url('bgimg.png') no-repeat center center/cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.overlay {
+  background: rgba(0, 0, 50, 0.6);
+  width: 100%;
+  height: 100%;
+  padding: 80px 100px;
+}
+
+.badge {
+  background: rgba(106, 90, 205, 0.3);
+  color: #fff;
+  padding: 5px 15px;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.headline {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+}
+
+.smart-way {
+  background: linear-gradient(to right, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtext {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #dcdcdc;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 150px;
+}
+
+.stat-item h4 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.stat-item p {
+  font-size: 14px;
+  color: #ddd;
+}

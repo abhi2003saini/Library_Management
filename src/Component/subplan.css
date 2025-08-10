@@ -1,0 +1,62 @@
+.subplan {
+  padding: 50px 20px;
+  background-color: #f9fbff;
+  /* margin-top: 50px; */
+}
+
+.plan-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card .price {
+  color: #1a73e8;
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.plan-card .desc {
+  color: #555;
+  margin: 15px 0;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.feature-list li {
+  color: #2e7d32;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.check {
+  color: #2ecc71;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.plan-card .btn {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #1a73e8;
+  border: none;
+}
+.container{
+    /* margin-top: 50px; */
+}
+.buttons{
+  text-align: center;
+}

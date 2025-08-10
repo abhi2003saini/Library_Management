@@ -1,0 +1,62 @@
+.title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.title p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.title{
+    background-color: #f9fbff;
+
+}
+.contact-info .info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.icon-box {
+  background-color: #eaf0ff;
+  color: #3f80ff;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.info-item strong {
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.info-item p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-control {
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+}
+
+.contact-form .btn {
+  background: linear-gradient(90deg, #2661fa, #4b8aff);
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+}
