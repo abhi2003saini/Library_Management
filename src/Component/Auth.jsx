@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import { auth } from '../Page/firebase';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-export default function AuthPage() {
+function Auth() {
   const [isLoginPage, setIsLoginPage] = useState(true);
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPass, setLoginPass] = useState('');
@@ -9,22 +16,46 @@ export default function AuthPage() {
   const [signupPass, setSignupPass] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+
+  // LOGIN
+  const handleLogin = async (e) => {
     e.preventDefault();
     if (loginEmail && loginPass) {
-      setMessage('Login logic not implemented.');
-      console.log('Login:', loginEmail, loginPass);
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPass);
+
+        if (loginEmail === "admin@gmail.com") {
+          navigate("/admin"); 
+        } else {
+          navigate("/plans"); 
+        }
+
+        setMessage("Login successful ✅");
+      } catch (error) {
+        setMessage(error.message);
+      }
     } else {
       setMessage('Please enter both email and password.');
     }
   };
 
-  const handleSignup = (e) => {
+  // SIGNUP
+  const handleSignup = async (e) => {
     e.preventDefault();
     if (name && signupEmail && signupPass) {
-      setMessage('Signup logic not implemented.');
-      console.log('Signup:', name, signupEmail, signupPass);
-      setIsLoginPage(true);
+      try {
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          signupEmail,
+          signupPass
+        );
+        await updateProfile(userCredential.user, { displayName: name });
+        setMessage('Signup successful ✅ You can now login.');
+        setIsLoginPage(true);
+      } catch (error) {
+        setMessage(error.message);
+      }
     } else {
       setMessage('Please fill in all fields.');
     }
@@ -95,13 +126,25 @@ export default function AuthPage() {
               style={styles.input}
               required
             />
-            <button type="submit" style={styles.button}>Login</button>
+            <button type="submit" style={styles.button}>
+              Login
+            </button>
             {message && (
-              <p style={{ color: 'red', textAlign: 'center' }}>{message}</p>
+              <p
+                style={{
+                  color: message.includes('✅') ? 'green' : 'red',
+                  textAlign: 'center',
+                }}
+              >
+                {message}
+              </p>
             )}
             <span
               style={styles.linkStyle}
-              onClick={() => setIsLoginPage(false)}
+              onClick={() => {
+                setMessage('');
+                setIsLoginPage(false);
+              }}
             >
               Don't have an account? Signup
             </span>
@@ -133,13 +176,25 @@ export default function AuthPage() {
               style={styles.input}
               required
             />
-            <button type="submit" style={styles.button}>Sign Up</button>
+            <button type="submit" style={styles.button}>
+              Sign Up
+            </button>
             {message && (
-              <p style={{ color: 'red', textAlign: 'center' }}>{message}</p>
+              <p
+                style={{
+                  color: message.includes('✅') ? 'green' : 'red',
+                  textAlign: 'center',
+                }}
+              >
+                {message}
+              </p>
             )}
             <span
               style={styles.linkStyle}
-              onClick={() => setIsLoginPage(true)}
+              onClick={() => {
+                setMessage('');
+                setIsLoginPage(true);
+              }}
             >
               Already have an account? Login
             </span>
@@ -149,3 +204,5 @@ export default function AuthPage() {
     </div>
   );
 }
+
+export default Auth;

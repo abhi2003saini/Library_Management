@@ -8,7 +8,6 @@ function Footer() {
       <div className='container'>
         <div className='row'>
 
-          {/* Logo and Links */}
           <div className='col-lg-3 col-md-6 mb-4'>
             <img src='logo.png' alt='Logo' className='img-fluid mb-3 footer-logo' />
             <ul className='footer-links'>
@@ -20,13 +19,11 @@ function Footer() {
             </ul>
           </div>
 
-          {/* About */}
           <div className='col-lg-3 col-md-6 mb-4'>
             <h4>About</h4>
             <p>We provide smart solutions for modern libraries — from AI-driven member tracking to dynamic cataloging and analytics tools.</p>
           </div>
 
-          {/* Contact Info */}
           <div className='col-lg-3 col-md-6 mb-4'>
             <h4>Contact</h4>
             <p><FontAwesomeIcon icon={faPhone} /> +91-639141728</p>
@@ -34,7 +31,6 @@ function Footer() {
             <p><FontAwesomeIcon icon={faLocationDot} /> Laxmi Colony Sanganer Jaipur 302029</p>
           </div>
 
-          {/* Newsletter */}
           <div className='col-lg-3 col-md-6 mb-4'>
             <h4>Newsletter</h4>
             <p>Stay updated with the latest news and updates from our library platform.</p>
